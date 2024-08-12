@@ -6,7 +6,7 @@
 /*   By: ewoillar <ewoillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 15:03:30 by ewoillar          #+#    #+#             */
-/*   Updated: 2024/08/12 15:09:14 by ewoillar         ###   ########.fr       */
+/*   Updated: 2024/08/12 16:38:26 by ewoillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 class Weapon
 {
 	public:
-		Weapon();
+		Weapon(std::string t);
 		~Weapon();
-		void setWeapon(std::string t);
-		std::string getWeapon();
+		void setType(std::string t);
+		const std::string& getType();
 	private:
 		std::string type;
 };
