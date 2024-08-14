@@ -6,7 +6,7 @@
 /*   By: ewoillar <ewoillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 17:38:40 by ewoillar          #+#    #+#             */
-/*   Updated: 2024/08/12 18:04:40 by ewoillar         ###   ########.fr       */
+/*   Updated: 2024/08/14 15:10:43 by ewoillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,36 @@
 int main(int argc, char **argv)
 {
 	if (argc != 4)
-		return (std::cout << "Error: must be ./sed <filename> <find> <replace>" << std::endl, 1);
+		return (std::cerr << "Error: must be ./sed <filename> <find> <replace>" << std::endl, 1);
+	if (!argv[1] || !argv[2] || !argv[3])
+		return (std::cerr << "Value can't be empty string!" << std::endl, 1);
 	std::fstream file;
-	file.open(argv[1]);
+	std::fstream file_replace;
+	std::string line;
+	std::string filename = argv[1];
+    std::string find = argv[2];
+    std::string replace = argv[3];
+	std::string replace_filename = filename + ".replace";
+	file.open(argv[1], std::ios::in);
 	if (!file.is_open())
-		return (std::cout << "Error: file not found" << std::endl, 1);
-	char ch;
+		return (std::cerr << "Error: file not found" << std::endl, 1);
+	file_replace.open(replace_filename.c_str(), std::ios::out);
+	if (!file_replace.is_open())
+		return (std::cerr << "Error: could not create file" << std::endl, file.close(), 1);
+	while (getline(file, line))
+	{
+		std::string new_line;
+		size_t pos = 0;
+		while ((pos = line.find(find, pos))!= std::string::npos)
+		{
+			new_line.append(line, 0, pos);
+			new_line.append(replace);
+			line = line.substr(pos + find.length());
+			pos = 0;
+		}
+		new_line.append(line);
+		file_replace << new_line << std::endl;
+	}
 	file.close();
+	file_replace.close();
 }
