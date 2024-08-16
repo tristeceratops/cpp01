@@ -6,7 +6,7 @@
 /*   By: ewoillar <ewoillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 15:43:42 by ewoillar          #+#    #+#             */
-/*   Updated: 2024/08/16 14:09:30 by ewoillar         ###   ########.fr       */
+/*   Updated: 2024/08/16 14:11:07 by ewoillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void Harl::complain(std::string level)
 		}
 	}
 	if (index >= 0)
-		std::cout << "[ " << l[index] << "]" << std::endl;
+		std::cout << "[ " << l[index] << " ]" << std::endl;
 	switch (index)
 	{
 		case 0:
@@ -48,7 +48,7 @@ void Harl::complain(std::string level)
 			(harl.*p[3])();
 			break;		
 		default:
-			std::cout << "[ " << level << "]" << std::endl;
+			std::cout << "[ " << level << " ]" << std::endl;
 			std::cout << "Wrong logs level, please refer to the manual of Harl" << std::endl;
 			break;
 	}
