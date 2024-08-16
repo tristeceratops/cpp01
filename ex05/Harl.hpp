@@ -6,7 +6,7 @@
 /*   By: ewoillar <ewoillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 15:43:45 by ewoillar          #+#    #+#             */
-/*   Updated: 2024/08/14 16:38:22 by ewoillar         ###   ########.fr       */
+/*   Updated: 2024/08/16 10:52:08 by ewoillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 class Harl
 {
 	public:
+		Harl();
+		~Harl();
 		void	complain(std::string level);
 	private:
 		void debug();
