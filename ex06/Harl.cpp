@@ -6,7 +6,7 @@
 /*   By: ewoillar <ewoillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 15:43:42 by ewoillar          #+#    #+#             */
-/*   Updated: 2024/08/16 13:59:47 by ewoillar         ###   ########.fr       */
+/*   Updated: 2024/08/16 14:09:30 by ewoillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void Harl::complain(std::string level)
 	int index = -1;
 	Harl harl;
 	pointToFunc p[] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-	std::string l[] = {"debug", "info", "warning", "error"};
+	std::string l[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	for(int i = 0; i < 4; i++)
 	{
 		if (level == l[i])
@@ -34,6 +34,8 @@ void Harl::complain(std::string level)
 			break;
 		}
 	}
+	if (index >= 0)
+		std::cout << "[ " << l[index] << "]" << std::endl;
 	switch (index)
 	{
 		case 0:
@@ -46,6 +48,8 @@ void Harl::complain(std::string level)
 			(harl.*p[3])();
 			break;		
 		default:
+			std::cout << "[ " << level << "]" << std::endl;
+			std::cout << "Wrong logs level, please refer to the manual of Harl" << std::endl;
 			break;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: ewoillar <ewoillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 15:43:42 by ewoillar          #+#    #+#             */
-/*   Updated: 2024/08/16 11:09:59 by ewoillar         ###   ########.fr       */
+/*   Updated: 2024/08/16 14:06:00 by ewoillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void Harl::complain(std::string level)
 {
 	Harl harl;
 	pointToFunc p[] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-	std::string l[] = {"debug", "info", "warning", "error"};
+	std::string l[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	for(int i = 0; i < 4; i++)
 	{
 		if (level == l[i])
