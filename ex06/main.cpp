@@ -6,7 +6,7 @@
 /*   By: ewoillar <ewoillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 15:43:47 by ewoillar          #+#    #+#             */
-/*   Updated: 2024/08/16 11:50:08 by ewoillar         ###   ########.fr       */
+/*   Updated: 2024/08/20 11:17:34 by ewoillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,7 @@ int main(int argc, char **argv)
 	Harl harl;
 	if (argc >= 2)
 		harl.complain(argv[1]);
+	else
+		std::cout << "need a logs level" << std::endl;
 	return 0;
 }
