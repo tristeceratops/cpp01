@@ -6,7 +6,7 @@
 /*   By: ewoillar <ewoillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 15:43:42 by ewoillar          #+#    #+#             */
-/*   Updated: 2024/08/16 14:11:07 by ewoillar         ###   ########.fr       */
+/*   Updated: 2024/08/19 14:42:13 by ewoillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,24 @@ void Harl::complain(std::string level)
 			break;
 		}
 	}
-	if (index >= 0)
-		std::cout << "[ " << l[index] << " ]" << std::endl;
 	switch (index)
 	{
 		case 0:
+			std::cout << "[ " << l[0] << " ]" << std::endl;
 			(harl.*p[0])();
+			std::cout << std::endl;
 		case 1:
+			std::cout << "[ " << l[1] << " ]" << std::endl;
 			(harl.*p[1])();
+			std::cout << std::endl;
 		case 2:
+			std::cout << "[ " << l[2] << " ]" << std::endl;
 			(harl.*p[2])();
+			std::cout << std::endl;
 		case 3:
+			std::cout << "[ " << l[3] << " ]" << std::endl;
 			(harl.*p[3])();
+			std::cout << std::endl;
 			break;		
 		default:
 			std::cout << "[ " << level << " ]" << std::endl;
